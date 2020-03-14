@@ -1,7 +1,7 @@
 tdvhackaviz2020
 ===============
 
-This package contains *ready to use R data package** of the datasets provided by [ToulouseDataViz](https://toulouse-dataviz.fr/) in the frame of the [Hackaviz2020](https://github.com/ToulouseDataViz/Hackaviz2020).
+This package contains **ready to use R data package** of the datasets provided by [ToulouseDataViz](https://toulouse-dataviz.fr/) in the frame of the [Hackaviz2020](https://github.com/ToulouseDataViz/Hackaviz2020).
 
 This package contains the following datasets
 
