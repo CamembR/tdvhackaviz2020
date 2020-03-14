@@ -38,7 +38,7 @@ tdvhackaviz2020::par_origines
 
 -----
 
-Please note that the data are provided by [ToulouseDataViz](https://toulouse-dataviz.fr/) and so *the terms of uses applies as defined in their repository**: [Hackaviz2020](https://github.com/ToulouseDataViz/Hackaviz2020).
+Please note that the data are provided by [ToulouseDataViz](https://toulouse-dataviz.fr/) and so **the terms of uses applies as defined in their repository**: [Hackaviz2020](https://github.com/ToulouseDataViz/Hackaviz2020).
 
 ## TODO
 
