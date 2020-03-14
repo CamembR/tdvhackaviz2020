@@ -23,7 +23,7 @@ devtools::install_github("CamembR/tdvhackaviz2020")
 
 # Use it
 
-par_origines
+tdvhackaviz2020::par_origines
 
 #  A tibble: 493,235 x 8
 #    date       org   dest  volume vacances_org temp_midi meteo nb_evt
