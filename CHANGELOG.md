@@ -6,6 +6,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.4.2] - 2020-03-15
+
+### Fixed
+
+- `par_origines_td` fixed duplicates -> see [issue #2](https://github.com/ToulouseDataViz/Hackaviz2020/issues/2).
+  Fixed by keeping only the `last` value.
+
+```R
+# Before the fix duplicated lines 2 lines for each day between GB and 11.
+
+par_origines_td %>% group_by(date, dep_org, dep_dest) %>% summarise(count = n()) %>% filter(count > 1)
+
+#  A tibble: 365 x 4
+#  Groups:   date, dep_org [365]
+#   date       dep_org dep_dest count
+#   <date>     <fct>   <fct>    <int>
+#  1 2018-01-01 GB      11           2
+#  2 2018-01-02 GB      11           2
+#  3 2018-01-03 GB      11           2
+```
+
 ## [0.4.1] - 2020-03-15
 
 ### Fixed

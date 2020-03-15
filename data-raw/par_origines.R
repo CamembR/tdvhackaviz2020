@@ -24,6 +24,7 @@ par_origines <- raw %>%
 par_origines_td <- par_origines %>%
     rename(dep_org = org, dep_dest = dest) %>%
     mutate(dep_org = factor(dep_org), dep_dest = factor(dep_dest)) %>%
+    group_by(date, dep_org, dep_dest) %>% summarise_all(~last(.)) %>% # Filter duplicates
     arrange(date, dep_org, dep_dest)
 
 
