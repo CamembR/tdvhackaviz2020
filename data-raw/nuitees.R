@@ -23,6 +23,7 @@ nuitees_td <- nuitees %>%
     # Removing total
     select(-total_occitanie) %>%
     gather(dep,nuitees,dpt_09:dpt_82) %>%
+    mutate(nuitees = na_if(nuitees, 0)) %>%
     mutate(dep = factor(str_replace(dep, "dpt_", ""))) %>%
     arrange(date, dep)
 
