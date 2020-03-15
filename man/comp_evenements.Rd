@@ -6,7 +6,7 @@
 \title{Complements / Evenements}
 \format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 202 rows and 5 columns.}
 \source{
-<https://github.com/ToulouseDataViz/Hackaviz2020>
+\url{https://github.com/ToulouseDataViz/Hackaviz2020}
 }
 \usage{
 comp_evenements

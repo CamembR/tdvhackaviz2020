@@ -84,21 +84,26 @@ NULL
 
 # ---- Origines ----
 
-#' Par Origines.
+#' Tidy version of the \code{par_origines} dataset.
 #'
+#' @source \url{https://github.com/ToulouseDataViz/Hackaviz2020}
 "par_origines"
+
+#' Tidy version of the \code{par_origines} dataset.
+#'
+"par_origines_td"
 
 #' Complements / Evenements
 #'
-#' @source <https://github.com/ToulouseDataViz/Hackaviz2020>
+#' @source \url{https://github.com/ToulouseDataViz/Hackaviz2020}
 "comp_evenements"
 
 #' Complements / Departements
 #'
-#' @source <https://github.com/ToulouseDataViz/Hackaviz2020>
+#' @source \url{https://github.com/ToulouseDataViz/Hackaviz2020}
 "comp_departements"
 
 #' Complements / pays
 #'
-#' @source <https://github.com/ToulouseDataViz/Hackaviz2020>
+#' @source \url{https://github.com/ToulouseDataViz/Hackaviz2020}
 "comp_pays"

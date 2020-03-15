@@ -9,7 +9,7 @@ This package contains the following datasets with two flavors original and tidy 
 - `capacites`
     - `capacites_td`: whithout weekly data (`pop` and `hbgt_*`)
     - `capacites_sem_td`: with only weekly data `capa` per week (`sem_*`)
-- `par_origines`
+- `par_origines` / `par_origines_td`
 - Complements: Split the complements dataset in three datatesets
     - `comp_evenements`
     - `comp_departemets`
@@ -25,18 +25,16 @@ devtools::install_github("CamembR/tdvhackaviz2020")
 
 # Use it
 
-tdvhackaviz2020::par_origines
+tdvhackaviz2020::nuitees_td
 
-#  A tibble: 493,235 x 8
-#    date       org   dest  volume vacances_org temp_midi meteo nb_evt
-#    <date>     <chr> <chr>  <dbl>        <dbl>     <dbl> <dbl>  <dbl>
-#  1 2018-01-01 01    09       169            1        12     0      0
-#  2 2018-01-01 28    65       138            1         9     0      0
+# A tibble: 4,745 x 3
+# date       dep   nuitees
+# <date>     <fct>   <dbl>
+# 1 2018-01-01 09      36427
+# 2 2018-01-01 11      60093
 ```
 
 ## Tidy version
-
-This package also proposes tidy versions of each dataset (suffixed by `_td`).
 
 ### Definition
 

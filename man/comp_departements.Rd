@@ -4,9 +4,9 @@
 \name{comp_departements}
 \alias{comp_departements}
 \title{Complements / Departements}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 99 rows and 3 columns.}
+\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 99 rows and 2 columns.}
 \source{
-<https://github.com/ToulouseDataViz/Hackaviz2020>
+\url{https://github.com/ToulouseDataViz/Hackaviz2020}
 }
 \usage{
 comp_departements
