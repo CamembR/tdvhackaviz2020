@@ -36,6 +36,7 @@ capacites_td <- capacites %>%
 capacites_sem_td <- capacites %>%
     select(dep, starts_with("sem_")) %>%
     gather(sem,capa,sem_01:sem_53) %>%
+    mutate(sem = as.numeric(str_replace(sem, "sem_", ""))) %>%
     select(sem, dep, capa) %>%
     arrange(sem, dep)
 

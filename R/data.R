@@ -76,8 +76,8 @@ NULL
 #' # A tibble: 689 x 3
 #' sem    dep      capa
 #' <chr>  <glue>  <dbl>
-#' 1 sem_01 dpt_09 110910
-#' 2 sem_01 dpt_11 202467
+#' 1 1 dpt_09 110910
+#' 2 2 dpt_11 202467
 #'
 #' @source \url{https://github.com/ToulouseDataViz/Hackaviz2020}
 "capacites_sem_td"
