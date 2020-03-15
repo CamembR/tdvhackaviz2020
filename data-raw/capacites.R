@@ -30,11 +30,13 @@ capacites <- raw %>%
 
 capacites_td <- capacites %>%
     select(-starts_with("sem_"), -hbgt_total) %>%
+    mutate(dep = factor(str_replace(dep, "dpt_", ""))) %>%
     rename(pop = pop_dpt) %>%
     arrange(dep)
 
 capacites_sem_td <- capacites %>%
     select(dep, starts_with("sem_")) %>%
+    mutate(dep = factor(str_replace(dep, "dpt_", ""))) %>%
     gather(sem,capa,sem_01:sem_53) %>%
     mutate(sem = as.numeric(str_replace(sem, "sem_", ""))) %>%
     select(sem, dep, capa) %>%

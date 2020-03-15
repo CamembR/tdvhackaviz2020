@@ -1,14 +1,14 @@
 code,nom_pays
 BE,Belgique
-LU,Luxembourg
 CH,Suisse
 DE,Allemagne 
 DK,Danemark
-SE,Suède
-NO,Norvège
 ES,Espagne
-PT,Portugal
 GB,Royaume-Uni de Grande-Bretagne et d'Irlande du Nord 
 IT,Italie
+LU,Luxembourg
 NL,Pays-Bas
+NO,Norvège
+PT,Portugal
+SE,Suède
 US,Etats-Unis d'Amérique

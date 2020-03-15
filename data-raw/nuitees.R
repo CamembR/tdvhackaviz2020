@@ -23,10 +23,10 @@ nuitees_td <- nuitees %>%
     # Removing total
     select(-total_occitanie) %>%
     gather(dep,nuitees,dpt_09:dpt_82) %>%
+    mutate(dep = factor(str_replace(dep, "dpt_", ""))) %>%
     arrange(date, dep)
 
 
 write_csv(nuitees, raw_data)
 usethis::use_data(nuitees, overwrite = TRUE, compress = 'xz')
-usethis::use_data(nuitees_td, overwrite = TRUE, compress = 'xz')
 usethis::use_data(nuitees_td, overwrite = TRUE, compress = 'xz')
