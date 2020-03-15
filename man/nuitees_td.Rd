@@ -3,7 +3,7 @@
 \docType{data}
 \name{nuitees_td}
 \alias{nuitees_td}
-\title{Tidy version of the nuitees dataset.}
+\title{Tidy version of the \code{nuitees} dataset.}
 \format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 4745 rows and 3 columns.}
 \source{
 \url{https://github.com/ToulouseDataViz/Hackaviz2020}

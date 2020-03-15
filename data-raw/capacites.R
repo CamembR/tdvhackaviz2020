@@ -7,9 +7,10 @@ library(dplyr)
 file_name <- "capacites.csv"
 url <- str_glue("https://raw.githubusercontent.com/ToulouseDataViz/Hackaviz2020/master/{file_name}")
 raw_data <- str_glue("data-raw/{file_name}")
+# Reload or not the file from the source
+reload <- TRUE
 
-
-if (!file.exists(raw_data)) {
+if (reload | !file.exists(raw_data)) {
     download.file(url, raw_data)
 }
 
@@ -22,8 +23,24 @@ raw <- readr::read_csv(raw_data,
 capacites <- raw %>%
     rename_all(tolower) %>%
     rename(num_dpt = dpt) %>%
-    mutate(dpt = str_glue("dpt_{str_pad(num_dpt, 2, side = 'left', pad=0)}")) %>%
-    select("dpt", "num_dpt", "nom_dpt", everything())
+    mutate(dep = str_glue("dpt_{str_pad(num_dpt, 2, side = 'left', pad=0)}")) %>%
+    select(-num_dpt, -nom_dpt) %>%
+    select(dep, everything()) %>%
+    arrange(dep)
+
+capacites_td <- capacites %>%
+    select(-starts_with("sem_"), -hbgt_total) %>%
+    rename(pop = pop_dpt) %>%
+    arrange(dep)
+
+capacites_sem_td <- capacites %>%
+    select(dep, starts_with("sem_")) %>%
+    gather(sem,capa,sem_01:sem_53) %>%
+    select(sem, dep, capa) %>%
+    arrange(sem, dep)
+
 
 write_csv(capacites, raw_data)
 usethis::use_data(capacites, overwrite = TRUE, compress = 'xz')
+usethis::use_data(capacites_td, overwrite = TRUE, compress = 'xz')
+usethis::use_data(capacites_sem_td, overwrite = TRUE, compress = 'xz')

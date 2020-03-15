@@ -4,9 +4,9 @@
 \name{capacites}
 \alias{capacites}
 \title{Capacites.}
-\format{An object of class \code{spec_tbl_df} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 13 rows and 62 columns.}
+\format{An object of class \code{spec_tbl_df} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 13 rows and 60 columns.}
 \source{
-<https://github.com/ToulouseDataViz/Hackaviz2020>
+\url{https://github.com/ToulouseDataViz/Hackaviz2020}
 }
 \usage{
 capacites

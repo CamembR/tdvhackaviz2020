@@ -29,3 +29,4 @@ nuitees_td <- nuitees %>%
 write_csv(nuitees, raw_data)
 usethis::use_data(nuitees, overwrite = TRUE, compress = 'xz')
 usethis::use_data(nuitees_td, overwrite = TRUE, compress = 'xz')
+usethis::use_data(nuitees_td, overwrite = TRUE, compress = 'xz')

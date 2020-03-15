@@ -1,7 +1,7 @@
 Package: tdvhackaviz2020
 Type: Package
 Title: ToulouseDataViz Hackaviz2020 data
-Version: 0.2.0
+Version: 0.3.0
 Author: CamembR <https://github.com/CamembR>
 Maintainer: Romain <romain@camembr.org>
 Description: ToulouseDataViz Hackaviz2020 data

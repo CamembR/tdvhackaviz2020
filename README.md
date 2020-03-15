@@ -7,6 +7,8 @@ This package contains the following datasets with two flavors original and tidy 
 
 - `nuitees` / `nuitees_td`
 - `capacites`
+    - `capacites_td`: whithout weekly data (`pop` and `hbgt_*`)
+    - `capacites_sem_td`: with only weekly data `capa` per week (`sem_*`)
 - `par_origines`
 - Complements: Split the complements dataset in three datatesets
     - `comp_evenements`
