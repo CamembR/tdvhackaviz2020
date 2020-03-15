@@ -6,7 +6,7 @@
 \title{Nuitees.}
 \format{An object of class \code{spec_tbl_df} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 365 rows and 15 columns.}
 \source{
-<https://github.com/ToulouseDataViz/Hackaviz2020>
+\url{https://github.com/ToulouseDataViz/Hackaviz2020}
 }
 \usage{
 nuitees
