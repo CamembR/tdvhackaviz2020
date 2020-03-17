@@ -14,7 +14,9 @@ This package contains the following datasets with two flavors original and tidy 
     - `comp_evenements`
     - `comp_departemets`
     - `comp_pays`
-    
+
+It also contains **time series data** formatted as a [tsibble](https://tsibble.tidyverts.org/).
+
 ## Installation and usage
 
 ```R
@@ -23,7 +25,7 @@ This package contains the following datasets with two flavors original and tidy 
 
 devtools::install_github("CamembR/tdvhackaviz2020")
 
-# Use it
+# Use tidy datasets
 
 tdvhackaviz2020::nuitees_td
 
@@ -32,6 +34,27 @@ tdvhackaviz2020::nuitees_td
 # <date>     <fct>   <dbl>
 # 1 2018-01-01 09      36427
 # 2 2018-01-01 11      60093
+
+# Use tsibble
+
+tdvhackaviz2020::tourists_tsbl() %>%
+  group_by_key() %>%
+  index_by(year_month = ~ year(.)) %>% # monthly aggregates
+  summarise(
+    capa = mean(capa, na.rm = TRUE),
+    nuitees = mean(nuitees, na.rm = TRUE),
+    diff = capa - nuitees
+  ) %>% 
+  arrange(desc(nuitees)) %>% 
+  top_n(3, nuitees)
+
+# A tsibble: 3 x 5 [?]
+# Key:       dep [3]
+# dep   year_month    capa nuitees   diff
+# <fct>      <dbl>   <dbl>   <dbl>  <dbl>
+# 1 34          2018 135983. 137096. -1112.
+# 2 66          2018  86810.  87599.  -789.
+# 3 31          2018  78069.  78823.  -754.
 ```
 
 ## Tidy version

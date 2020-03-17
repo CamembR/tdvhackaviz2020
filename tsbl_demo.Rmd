@@ -1,0 +1,65 @@
+---
+title: "Tsibble demo"
+output: html_notebook
+---
+
+This notebook illustrates the usage of [tsibble](https://tsibble.tidyverts.org/) datasets.
+
+```{r}
+library(tsibble)
+library(feasts)
+library(dplyr)
+library(ggplot2)
+library(lubridate)
+```
+
+# A tsibble
+
+```{r}
+tourists_tsbl <- tdvhackaviz2020::tourists_tsbl()
+tourists_tsbl
+```
+
+# Filtering
+
+```{r}
+top_3 <- tourists_tsbl %>%
+  group_by_key() %>%
+  index_by(year_month = ~ year(.)) %>% # monthly aggregates
+  summarise(
+    capa = mean(capa, na.rm = TRUE),
+    nuitees = mean(nuitees, na.rm = TRUE),
+    diff = capa - nuitees
+  ) %>% 
+  arrange(desc(nuitees)) %>% 
+  top_n(3, nuitees)
+top_3
+```
+
+```{r}
+tourists_tsbl %>% 
+    filter(dep %in% top_3$dep) %>% 
+    gg_season(capa)
+```
+# Plotting
+
+```{r}
+tourists_tsbl() %>% 
+  filter(dep %in% top_3$dep) %>% 
+  ggplot(aes(x = date, y = nuitees)) +
+  geom_line(aes(y = capa, col = "capa")) +
+  geom_line(aes(y = nuitees, col = "nuitees")) +
+  facet_grid(dep ~ .)
+```
+
+```{r}
+tdvhackaviz2020::nuitees_tsbl() %>% 
+   filter(dep %in% top_3$dep) %>% 
+   mutate(
+    day = lubridate::wday(date, label = TRUE),
+    weekend = (day %in% c("Dim", "Sam"))
+  ) %>%
+  ggplot(aes(x = date, y = nuitees, group=dep)) +
+    geom_line(aes(col = dep))
+```
+

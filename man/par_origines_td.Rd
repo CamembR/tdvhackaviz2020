@@ -4,7 +4,7 @@
 \name{par_origines_td}
 \alias{par_origines_td}
 \title{Tidy version of the \code{par_origines} dataset.}
-\format{An object of class \code{spec_tbl_df} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 493235 rows and 8 columns.}
+\format{An object of class \code{grouped_df} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 492870 rows and 8 columns.}
 \usage{
 par_origines_td
 }

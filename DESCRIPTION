@@ -1,7 +1,7 @@
 Package: tdvhackaviz2020
 Type: Package
 Title: ToulouseDataViz Hackaviz2020 data
-Version: 0.4.2
+Version: 0.5.0
 Author: CamembR <https://github.com/CamembR>
 Maintainer: Romain <romain@camembr.org>
 Description: ToulouseDataViz Hackaviz2020 data
@@ -9,7 +9,7 @@ Description: ToulouseDataViz Hackaviz2020 data
 Depends:
     R (>= 2.10)
 Imports:
-    tibble
+    tibble, tsibble
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true

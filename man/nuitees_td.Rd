@@ -18,22 +18,10 @@ In consequence \code{total_occitanie} has been removed since it is a \code{sum} 
 \examples{
 nuitees_td
 
-# A tibble: 4,745 x 3
-date       dep    nuitees
-<date>     <chr>    <dbl>
-1 2018-01-01 dpt_09   36427
-2 2018-01-01 dpt_11   60093
-
 # To get total_occitanie
 nuitees_td \%>\%
   group_by(date) \%>\%
   summarise(total_occitanie = sum(nuitees))
-
-# A tibble: 365 x 2
-date       total_occitanie
-<date>               <dbl>
-1 2018-01-01          927930
-2 2018-01-02          444144
 
 }
 \keyword{datasets}

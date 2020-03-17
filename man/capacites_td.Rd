@@ -17,21 +17,8 @@ Total has been removed since it can be computed by summing all the columns.
 \examples{
 capacites_td
 
-# A tibble: 13 x 6
- dep        pop hbgt_collectif hbgt_locatif hbgt_plein_air hbgt_hotel
- <glue>   <dbl>          <dbl>        <dbl>          <dbl>      <dbl>
- 1 dpt_09  152611            187         2972           6337       1138
- 2 dpt_11  368323          11534        21106          35451       7662
- 3 dpt_12  278217           5651        18554          31042       9705
-
 # Total hbgt
 capacites_td \%>\% mutate(hbgt_total = rowSums(select(., starts_with("hbgt_"))))
-
-# A tibble: 13 x 7
-dep        pop hbgt_collectif hbgt_locatif hbgt_plein_air hbgt_hotel hbgt_total
-<glue>   <dbl>          <dbl>        <dbl>          <dbl>      <dbl>      <dbl>
-1 dpt_09  152611            187         2972           6337       1138      10634
-2 dpt_11  368323          11534        21106          35451       7662      75753
 
 }
 \keyword{datasets}

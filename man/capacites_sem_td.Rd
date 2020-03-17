@@ -17,11 +17,5 @@ Tidy version of part of the \code{capacite} dataset limited to the weekly data \
 \examples{
 capacites_sem_td
 
-# A tibble: 689 x 3
-sem    dep      capa
-<chr>  <glue>  <dbl>
-1 1 dpt_09 110910
-2 2 dpt_11 202467
-
 }
 \keyword{datasets}
