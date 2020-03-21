@@ -22,10 +22,10 @@ par_origines <- raw %>%
     rename_all(tolower)
 
 par_origines_td <- par_origines %>%
-    rename(dep_org = org, dep_dest = dest) %>%
-    mutate(dep_org = factor(dep_org), dep_dest = factor(dep_dest)) %>%
-    group_by(date, dep_org, dep_dest) %>% summarise_all(~last(.)) %>% # Filter duplicates
-    arrange(date, dep_org, dep_dest)
+    rename(dep_org = org, dep = dest) %>%
+    mutate(dep_org = factor(dep_org), dep = factor(dep)) %>%
+    group_by(date, dep, dep_org) %>% summarise_all(~last(.)) %>% # Filter duplicates
+    arrange(date, dep, dep_org)
 
 
 write_csv(par_origines, raw_data)

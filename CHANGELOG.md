@@ -6,6 +6,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.6.0] - 2020-03-21
+
+### Fixed
+
+- `par_origines_td` rename `dep_dest` to `dep` in order to be consistent with other datasets.
+- New dataset for holidays available as
+  - raw data `vacances`
+  - tidy data `vacance_td`
+  - time series `vacances_tsbl()`
+
 ## [0.5.0] - 2020-03-17
 
 ### Added

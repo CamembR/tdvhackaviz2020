@@ -40,6 +40,24 @@ capacites_tsbl <- function() {
     capacites_tsbl
 }
 
+#' \code{vacances_td} dataset as a tsibble.
+#'
+#' Creates and return a tsibble dataset from \code{vacances_td} with the \code{zone} defined as the key.
+#'
+#' @return a tsibble
+#'
+#' @examples
+#' vacances_tsbl()
+#'
+#' @export
+vacances_tsbl <- function() {
+    vacances_tsbl <- tdvhackaviz2020::vacances_td %>%
+        select(zone, date, vacances) %>%
+        as_tsibble(key = zone, index = date)
+    vacances_tsbl
+}
+
+
 #' Merge between \code{capacite_td} and \code{nuitees_td} datasets as a tsibble.
 #'
 #' Creates and return a tsibble dataset merge of \code{nuitees_tsbl} and \code{capacites_tsbl}
@@ -59,3 +77,4 @@ tourists_tsbl <- function() {
         fill_gaps() %>%
         tidyr::fill(capa, .direction = "down")
 }
+

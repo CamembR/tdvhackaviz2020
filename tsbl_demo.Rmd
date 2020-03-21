@@ -11,6 +11,8 @@ library(feasts)
 library(dplyr)
 library(ggplot2)
 library(lubridate)
+library(tidyr)
+
 ```
 
 # A tsibble
@@ -53,13 +55,42 @@ tourists_tsbl() %>%
 ```
 
 ```{r}
-tdvhackaviz2020::nuitees_tsbl() %>% 
+nuitees_plot <- tdvhackaviz2020::nuitees_tsbl() %>% 
    filter(dep %in% top_3$dep) %>% 
-   mutate(
-    day = lubridate::wday(date, label = TRUE),
-    weekend = (day %in% c("Dim", "Sam"))
-  ) %>%
   ggplot(aes(x = date, y = nuitees, group=dep)) +
     geom_line(aes(col = dep))
+nuitees_plot
+```
+
+# Highlighting Holidays
+
+A simple way to plot holidays from tidy data.
+
+```{r}
+tdvhackaviz2020::vacances_tsbl() %>% 
+  mutate(vacances = as.numeric(vacances) * 100) %>%
+  ggplot(aes(x = date, y = vacances, group = zone)) + 
+  scale_fill_grey() + 
+  geom_area(aes(fill=zone), position=position_dodge(1), alpha = 0.5) + 
+  theme_minimal()
+```
+
+Use with another plot.
+
+```{r paged.print=FALSE}
+nuitees_tsbl = tdvhackaviz2020::nuitees_tsbl()
+
+# Converting logical to numeric values
+vacances_tsbl <- tdvhackaviz2020::vacances_tsbl() %>% 
+  mutate(vacances = as.numeric(vacances) * max(nuitees_tsbl$nuitees , na.rm = TRUE))
+
+
+nuitees_tsbl %>% 
+  ggplot(aes(x = date, y = nuitees, group=dep)) +
+  geom_line(aes(col = dep)) + 
+  scale_fill_grey() + 
+  geom_area(data = vacances_tsbl, aes(x = date, y = vacances, group = zone, fill= zone),
+            position=position_dodge(1), alpha = 0.2) + 
+  theme_minimal()
 ```
 

@@ -3,4 +3,5 @@
 export(capacites_tsbl)
 export(nuitees_tsbl)
 export(tourists_tsbl)
+export(vacances_tsbl)
 importFrom(tibble,tibble)

@@ -76,3 +76,15 @@ NULL
 #'
 #' @source \url{https://github.com/ToulouseDataViz/Hackaviz2020}
 "comp_pays"
+
+# ---- Vacances ----
+
+#' Vacances dataset
+#'
+#' @source \url{https://github.com/AntoineAugusti/vacances-scolaires}
+"vacances"
+
+#' Tidy version of the \code{vacances} dataset.
+#'
+#' @source \url{https://github.com/AntoineAugusti/vacances-scolaires}
+"vacances_td"
